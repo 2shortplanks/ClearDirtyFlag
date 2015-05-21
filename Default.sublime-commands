@@ -1,0 +1,6 @@
+[
+    {
+        "caption": "Clear Dirty Flag",
+        "command": "clear_dirty_flag"
+    }
+]

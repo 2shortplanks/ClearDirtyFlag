@@ -9,7 +9,8 @@ class ClearDirtyFlag(sublime_plugin.ApplicationCommand):
                 if view.is_dirty():
                     filename = view.file_name()
                     if filename and os.path.isfile(filename):
-                        on_disk_contents = open(filename).read()
+                        with open(filename) as x:
+                            on_disk_contents = x.read()
                         in_buffer_contents = view.substr(sublime.Region(0, view.size()))
                         if on_disk_contents == in_buffer_contents:
                             print("%s isn't really dirty" % filename)
